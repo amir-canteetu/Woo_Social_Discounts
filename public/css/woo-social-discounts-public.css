@@ -1,0 +1,682 @@
+@import url('genericons/genericons.css');
+/**
+ * woo_social_discounts Base Styles
+ *
+ * Contains styles for modules, containers, buttons
+ */
+
+
+/* Master container */
+#jp-post-flair {
+	padding-top: .5em;
+}
+
+
+/* Overall woo_social_discounts block title */
+div.woo_social_discounts,
+#content div.woo_social_discounts,
+#main div.woo_social_discounts {
+	clear: both;
+}
+
+div.woo_social_discounts h3.wsd-title {
+	margin: 0 0 5px 0;
+	display: inline-block;
+	line-height: 1.2;
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+div.woo_social_discounts h3.wsd-title:before {
+	content: "";
+	display: block;
+	width: 100%;
+	min-width: 30px;
+	
+	margin-bottom: 1em;
+}
+
+body.highlander-light h3.wsd-title:before {
+	border-top: 1px solid rgba(0,0,0,.2);
+}
+
+body.highlander-dark h3.wsd-title:before {
+	border-top: 1px solid rgba(255,255,255,.4);
+}
+
+
+/* Sharing services list */
+.wsd-content ul {
+	padding: 0 !important;
+	margin: 0 0 .7em 0 !important;
+	list-style: none !important;
+}
+
+.wsd-content ul li {
+	display: inline-block;
+}
+
+.wsd-block.wsd-gplus {
+	margin: 0 0 .5em 0;
+}
+
+.wsd-gplus .wsd-content {
+	font-size: 12px;
+}
+
+
+/* Buttons */
+.wsd-social-icon .wsd-content ul li a.wsd-button,
+.wsd-social-text .wsd-content ul li a.wsd-button,
+.wsd-content ul li a.wsd-button,
+.wsd-content ul li .option a.share-ustom,	/* Ugh. */
+.wsd-content ul li.preview-item div.option.option-smart-off a,
+.wsd-content ul li.advanced a.share-more,
+.wsd-social-icon-text .wsd-content ul li a.wsd-button,
+.wsd-social-official .wsd-content>ul>li>a.wsd-button,
+#sharing_email .sharing_send,
+.wsd-social-official .wsd-content>ul>li .digg_button >a {		/* official Digg button no longer works, needs cleaning */
+	text-decoration: none !important;
+	display: inline-block;
+	margin: 0 5px 5px 0;
+	font-size: 12px;
+	font-family: "Open Sans", sans-serif;
+	font-weight: normal;
+	border-radius: 3px;
+	color: #777 !important;
+	background: #f8f8f8;
+	border: 1px solid #cccccc;
+	box-shadow: 0 1px 0 rgba(0,0,0,.08);
+	text-shadow: none;
+	line-height: 23px;
+	padding: 1px 8px 0px 5px;
+}
+
+.wsd-social-text .wsd-content ul li a.wsd-button span,
+.wsd-content ul li a.wsd-button>span,
+.wsd-content ul li .option a.share-ustom span,	/* Ugh. */
+.wsd-content ul li.preview-item div.option.option-smart-off a span,
+.wsd-content ul li.advanced a.share-more span,
+.wsd-social-icon-text .wsd-content ul li a.wsd-button>span,
+.wsd-social-official .wsd-content>ul>li>a.wsd-button span,
+.wsd-social-official .wsd-content>ul>li .digg_button >a span {		/* official Digg button no longer works, needs cleaning */
+	line-height: 23px;
+}
+
+
+
+/* Our gray buttons should be smaller when seen with the official ones */
+.wsd-social-official .wsd-content>ul>li>a.wsd-button,
+.wsd-social-official .wsd-content .sharing-hidden .inner>ul>li>a.wsd-button,
+.wsd-social-official .wsd-content>ul>li .digg_button>a,
+.wsd-social-official .wsd-content .sharing-hidden .inner>ul>li .digg_button>a {
+	line-height: 17px;
+	box-shadow: none; /* No shadow on gray buttons between the official ones */
+	vertical-align: top;
+}
+
+.wsd-social-official .wsd-content>ul>li>a.wsd-button:before,
+.wsd-social-official .wsd-content>ul>li .digg_button>a:before,
+.wsd-social-official .wsd-content .sharing-hidden .inner>ul>li>a.wsd-button:before,
+.wsd-social-official .wsd-content .sharing-hidden .inner>ul>li .digg_button>a:before {
+	margin-bottom: -1px;
+	top: 0;
+}
+
+.wsd-social-icon .wsd-content ul li a.wsd-button:hover,
+.wsd-social-icon .wsd-content ul li a.wsd-button:active,
+.wsd-social-text .wsd-content ul li a.wsd-button:hover,
+.wsd-social-text .wsd-content ul li a.wsd-button:active,
+.wsd-social-icon-text .wsd-content ul li a.wsd-button:hover,
+.wsd-social-icon-text .wsd-content ul li a.wsd-button:active,
+.wsd-social-official .wsd-content>ul>li>a.wsd-button:hover,
+.wsd-social-official .wsd-content>ul>li>a.wsd-button:active,
+.wsd-social-official .wsd-content>ul>li .digg_button>a:hover,
+.wsd-social-official .wsd-content>ul>li .digg_button>a:active {
+	color: #555;
+	background: #fafafa;
+	border: 1px solid #999999;
+}
+
+.wsd-social-icon .wsd-content ul li a.wsd-button:active,
+.wsd-social-text .wsd-content ul li a.wsd-button:active,
+.wsd-social-icon-text .wsd-content ul li a.wsd-button:active,
+.wsd-social-official .wsd-content>ul>li>a.wsd-button:active,
+.wsd-social-official .wsd-content>ul>li .digg_button>a:active {
+	box-shadow: inset 0 1px 0 rgba(0,0,0,.16);
+}
+
+
+/* All icons */
+.wsd-content ul li a.wsd-button:before {
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font: normal 16px/1 'Genericons';
+	vertical-align: top;
+	position: relative;
+	top: 3px;
+	text-align: center;
+}
+
+.wsd-content ul li {
+	margin: 0 !important;
+	padding: 0;
+}
+
+/* Text + icon & Official */
+.wsd-social-icon-text .wsd-content ul li a span,
+.wsd-social-official .wsd-content ul li a.wsd-button span,
+.wsd-content ul li.preview-item a.wsd-button span {
+	margin-left: 3px;
+}
+.wsd-content ul li.preview-item.no-icon a.wsd-button span {
+	margin-left: 0;
+}
+
+/* Text only */
+.wsd-social-text .wsd-content ul li a:before,
+.wsd-content ul li.no-icon a:before {
+	display: none;
+}
+body .wsd-social-text .wsd-content ul li.share-custom a span,
+body .wsd-content ul li.share-custom.no-icon a span {
+	background-image: none;
+	background-position: -500px -500px !important;	/* hack to work around !important inline style */
+	background-repeat: no-repeat !important;
+	padding-left: 0;
+	height: 0;
+	line-height: inherit;
+}
+
+.wsd-social-icon .wsd-content ul li a.share-more {
+	position: relative;
+	top: 2px;
+}
+.wsd-social-icon .wsd-content ul li a.share-more span {
+	margin-left: 3px;
+}
+
+
+/* Individual icons */
+.wsd-social-icon .wsd-content ul li.share-print a:before,
+.wsd-social-text .wsd-content ul li.share-print a:before,
+.wsd-content ul li.share-print div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-print a:before,
+.wsd-social-official .wsd-content li.share-print a:before {
+	content: '\f469';
+}
+
+.wsd-social-icon .wsd-content ul li.share-email a:before,
+.wsd-social-text .wsd-content ul li.share-email a:before,
+.wsd-content ul li.share-email div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-email a:before,
+.wsd-social-official .wsd-content li.share-email a:before {
+	content: '\f410';
+}
+.wsd-social-icon .wsd-content ul li.share-linkedin a:before,
+.wsd-social-text .wsd-content ul li.share-linkedin a:before,
+.wsd-content ul li.share-linkedin div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-linkedin a:before {
+	content: '\f207';
+}
+.wsd-social-icon .wsd-content ul li.share-twitter a:before,
+.wsd-social-text .wsd-content ul li.share-twitter a:before,
+.wsd-content ul li.share-twitter div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-twitter a:before {
+	content: '\f202';
+}
+.wsd-social-icon .wsd-content ul li.share-reddit a:before,
+.wsd-social-text .wsd-content ul li.share-reddit a:before,
+.wsd-content ul li.share-reddit div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-reddit a:before {
+	content: '\f222';
+}
+.wsd-social-icon .wsd-content ul li.share-tumblr a:before,
+.wsd-social-text .wsd-content ul li.share-tumblr a:before,
+.wsd-content ul li.share-tumblr div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-tumblr a:before {
+	content: '\f214';
+}
+.wsd-social-icon .wsd-content ul li.share-stumbleupon a:before,
+.wsd-social-text .wsd-content ul li.share-stumbleupon a:before,
+.wsd-content ul li.share-stumbleupon div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-stumbleupon a:before {
+	content: '\f223';
+}
+.wsd-social-icon .wsd-content ul li.share-pocket a:before,
+.wsd-social-text .wsd-content ul li.share-pocket a:before,
+.wsd-content ul li.share-pocket div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-pocket a:before {
+	content: '\f224';
+}
+.wsd-social-icon .wsd-content ul li.share-pinterest a:before,
+.wsd-social-text .wsd-content ul li.share-pinterest a:before,
+.wsd-content ul li.share-pinterest div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-pinterest a:before {
+	content: '\f209';
+}
+.wsd-social-icon .wsd-content ul li.share-google-plus a:before,
+.wsd-social-text .wsd-content ul li.share-google-plus a:before,
+.wsd-content ul li.share-google-plus div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-google-plus a:before {
+	content: '\f218';
+}
+.wsd-social-icon .wsd-content ul li.share-facebook a:before,
+.wsd-social-text .wsd-content ul li.share-facebook a:before,
+.wsd-content ul li.share-facebook div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-facebook a:before {
+	content: '\f204';
+}
+.wsd-social-icon .wsd-content ul li.share-press-this a:before,
+.wsd-social-text .wsd-content ul li.share-press-this a:before,
+.wsd-content ul li.share-press-this div.option.option-smart-off a:before,
+.wsd-social-icon-text .wsd-content li.share-press-this a:before,
+.wsd-social-official .wsd-content li.share-press-this a:before {
+	content: '\f205';
+}
+.wsd-social-official .wsd-content li.share-press-this a:before {
+	color: #2ba1cb;
+}
+.wsd-social-icon .wsd-content ul a.share-more:before,
+.wsd-social-text .wsd-content ul a.share-more:before,
+.wsd-content ul li.advanced a.share-more:before,
+.wsd-social-icon-text .wsd-content a.share-more:before,
+.wsd-social-official .wsd-content a.share-more:before {
+	content: '\f415';
+}
+.wsd-social-official .wsd-content a.share-more:before {
+	color: #2ba1cb;
+}
+
+
+/* Share count */
+.wsd-social .wsd-button .share-count {
+	background: #2ea2cc;
+	color: #fff;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	text-align: center;
+	font-size: 10px;
+	padding: 1px 3px;
+	line-height: 1;
+}
+
+
+/* Official buttons */
+.wsd-social-official .wsd-content ul, .wsd-social-official .wsd-content ul li {
+	line-height: 25px !important;
+}
+
+.wsd-social-official .wsd-content>ul>li>a.wsd-button span {
+	line-height: 1;
+}
+
+.wsd-social-official .wsd-content ul:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+.wsd-social-official .wsd-content li.share-press-this a {
+	margin: 0 0 5px 0;
+}
+
+.wsd-social-official .wsd-content ul>li {
+	display: block;
+	float: left;
+	margin: 0 10px 5px 0 !important;
+	height: 25px;
+}
+
+.wsd-social-official .fb-share-button > span {
+	vertical-align: top !important;
+}
+
+.wsd-social-official .wsd-content .pocket_button iframe {
+	width: 98px;
+}
+
+.wsd-social-official .wsd-content .twitter_button iframe {
+	width: 96px;
+}
+
+
+/* Individual official buttons */
+.stumbleupon_button iframe, .reddit_button iframe {
+	margin-top: 1px;
+}
+
+.pocket_button iframe, .googleplus1_button iframe, .pinterest_button, .twitter_button, .linkedin_button>span {
+	margin: 0 !important;
+}
+
+body .wsd-social-official li.share-print ,
+body .wsd-social-official li.share-email a,
+body .wsd-social-official li.share-custom a,
+body .wsd-social-official li a.share-more,
+body .wsd-social-official li.share-digg a,
+body .wsd-social-official li.share-press-this a
+{
+	position: relative;
+	top: 0;
+}
+
+
+/* Custom icons */
+body .wsd-social-icon .wsd-content li.share-custom>a {
+	padding: 2px 3px 0 3px;
+	position: relative;
+	top: 4px;
+}
+
+body .wsd-social-icon .wsd-content li.share-custom a span,
+body .wsd-social-icon-text .wsd-content li.share-custom a span,
+body .wsd-social-text .wsd-content li.share-custom a span,
+body .wsd-social-official .wsd-content li.share-custom a span,
+body .wsd-content ul li.share-custom a.share-icon span
+{
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	margin-left: 0;
+	padding: 0 0 0 19px;
+	display: inline-block;
+	height: 16px;
+	line-height: 16px;
+}
+
+body .wsd-social-icon .wsd-content li.share-custom a span {
+	width: 0;
+}
+
+body .wsd-content li.share-custom a:hover span {
+}
+
+body .wsd-social-icon .wsd-content li.share-custom a span {
+	padding-left: 16px !important;
+}
+
+
+/* Overflow Sharing dialog */
+.sharing-hidden .inner {
+	position: absolute;
+	z-index: 2;
+	border: 1px solid #ccc;
+	padding: 10px;
+	background: #fff;
+	box-shadow: 0px 5px 20px rgba(0,0,0,.2);
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	border-radius: 2px;
+	margin-top: 5px;
+	max-width: 400px;
+}
+
+.sharing-hidden .inner ul{
+	margin: 0 !important;
+}
+
+.wsd-social-official .wsd-content .sharing-hidden ul>li.share-end {
+	clear: both;
+	margin: 0;
+	height: 0;
+}
+
+.sharing-hidden .inner:before, .sharing-hidden .inner:after {
+	position: absolute;
+	z-index: 1;
+	top: -8px;
+	left: 20px;
+	width: 0;
+	height: 0;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 8px solid #ccc;
+	content: "";
+	display: block;
+}
+
+.sharing-hidden .inner:after {
+	z-index: 2;
+	top: -7px;
+	border-left: 6px solid transparent;
+	border-right: 6px solid transparent;
+	border-bottom: 8px solid #fff;
+}
+
+.sharing-hidden ul {
+	margin: 0;
+}
+
+
+/**
+ * Special colorful look for "Icon Only" option
+ */
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a,
+.wsd-social-icon .wsd-content ul li[class*='share-'] a:hover,
+.wsd-social-icon .wsd-content ul li[class*='share-'] div.option a {
+
+	border: 0;
+	box-shadow: none;
+	padding: 8px;
+        padding-left: 18px;
+        padding-right: 18px;
+	position: relative;
+	top: -2px;
+	line-height: 1;
+	width: auto;
+	height: auto;
+	margin-bottom: 0;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a.wsd-button>span,
+.wsd-social-icon .wsd-content ul li[class*='share-'] div.option a span {
+	line-height: 1;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a:hover,
+.wsd-social-icon .wsd-content ul li[class*='share-'] div.option a:hover {
+	border: none;
+	opacity: .6;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a.wsd-button:before {
+	top: 0;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a.wsd-button.share-custom {
+	padding: 8px 8px 6px 8px;
+	top: 5px;
+}
+
+.wsd-social-icon .wsd-content ul li a.wsd-button.share-more {
+	margin-left: 10px;
+}
+
+.wsd-social-icon .wsd-content ul li:first-child a.wsd-button.share-more {
+	margin-left: 0;
+}
+
+
+.wsd-social-icon .wsd-button span.share-count {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	border-radius: 0;
+	background: #555;
+	font-size: 9px;
+}
+
+/* Special look colors */
+
+.wsd-social-icon .wsd-content ul li[class*='share-'] a.wsd-button {
+	background: #e9e9e9;
+	margin-top: 2px;
+	text-indent: 0;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-tumblr a.wsd-button {
+	background: #2c4762;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-facebook a.wsd-button {
+	background: #3b5998;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-stumbleupon a.wsd-button {
+	background: #ea4b24;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-twitter a.wsd-button {
+	background: #00acee;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-pinterest a.wsd-button {
+	background: #ca1f27;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-digg a.wsd-button {
+	color: #555555 !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-press-this a.wsd-button {
+	background: #1e8cbe;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-linkedin a.wsd-button {
+	background: #0077b5;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-google-plus a.wsd-button {
+	background: #dd4b39;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-pocket a.wsd-button {
+	background: #ee4056;
+	color: #fff !important;
+}
+
+.wsd-social-icon .wsd-content ul li[class*='share-'].share-reddit a.wsd-button {
+	background: #cee3f8;
+	color: #555555 !important;
+}
+
+
+/**
+ * Screen Reader Text for "Icon Only" option
+ */
+
+.sharing-screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.sharing-screen-reader-text:hover,
+.sharing-screen-reader-text:active,
+.sharing-screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+/**
+ * Sharing Email Dialog
+ */
+
+#sharing_email {
+	width: 342px;
+	position: absolute;
+	z-index: 1001;
+	border: 1px solid #ccc;
+	padding: 15px;
+	background: #fff;
+	box-shadow: 0px 5px 20px rgba(0,0,0,.2);
+	text-align: left;
+}
+
+div.woo_social_discounts.woo_social_discounts-dark #sharing_email {
+	border-color: #fff;
+}
+
+#sharing_email .errors {
+	color: #fff;
+	background-color: #771a09;
+	font-size: 12px;
+	padding: 5px 8px;
+	line-height: 1;
+	margin: 10px 0 0 0;
+}
+
+#sharing_email label {
+	font-size: 12px;
+	color: #333;
+	font-weight: bold;
+	display: block;
+	padding: 0 0 4px 0;
+	text-align: left;
+	text-shadow: none;
+}
+
+#sharing_email form {
+	margin: 0;
+}
+
+#sharing_email input[type="text"], #sharing_email input[type="email"] {
+	width: 100%;
+	box-sizing: border-box;
+	-moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	border: 1px solid #ccc;
+	margin-bottom: 1em;
+	background: #fff;
+	font-size: 12px;
+	color: #333;
+	max-width: none;
+	padding: 1px 3px;
+}
+#jetpack-source_f_name {
+	display: none!important;
+	position: absolute !important;
+	left: -9000px;
+}
+
+#sharing_email .sharing_cancel {
+	padding: 0 0 0 1em;
+	font-size: 12px;
+	text-shadow: none;
+}
+
+#sharing_email .recaptcha {
+	width: 312px;
+	height: 123px;
+	margin: 0 0 1em 0;
+}
