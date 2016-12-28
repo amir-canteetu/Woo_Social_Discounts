@@ -65,6 +65,8 @@
             if(data.shares && WSDSharing.total_counts){
 
                 WSDSharing.total_counts.facebook = data.shares;
+                
+                console.log('These are the shares: ' + data.shares);
 
             } 
 

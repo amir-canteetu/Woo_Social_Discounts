@@ -26,11 +26,22 @@ if ( ! defined( 'ABSPATH' ) ) {
                         <th scope="row"><label for="woo_social_discounts_network">Choose Social Networks</label></th>
                         <td>
                             <p>
-                                <input type="checkbox" name="woo_social_discounts[social_shares][facebook]" id="woo_social_discounts_fb" value="1" <?php echo isset($settings['social_shares']['facebook'])? 'checked="checked"': ''; ?>/>Facebook&nbsp;&nbsp;&nbsp;
-                                <input type="checkbox" name="woo_social_discounts[social_shares][twitter]" id="woo_social_discounts_twitter" value="1"<?php echo isset($settings['social_shares']['twitter'])? 'checked="checked"': ''; ?>/>Twitter&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="woo_social_discounts[social_shares][facebook]" id="woo_social_discounts_fb" <?php echo isset($settings['social_shares']['facebook'])? 'checked="checked"': ''; ?>/>Facebook&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="woo_social_discounts[social_shares][twitter]" id="woo_social_discounts_twitter" <?php echo isset($settings['social_shares']['twitter'])? 'checked="checked"': ''; ?>/>Twitter&nbsp;&nbsp;&nbsp;
                             </p>
                         </td>
                     </tr>
+                    
+                    <tr valign="top">
+                        <th scope="row"><label for="woo_social_discounts_network">Facebook App ID</label></th>
+                        <td>
+                            <p>
+                                <input class="input-text regular-input" size="70" id="woo_social_discounts_facebook_app_id" name="woo_social_discounts[facebook_app_id]" value="<?php echo isset($settings["facebook_app_id"]) ? $settings["facebook_app_id"]: ''; ?>" type="text">
+                            </p>
+                            <span>You can find this ID using the <a href="https://developers.facebook.com/apps" target="_blank">App Dashboard</a>.</span>
+                        </td>
+                    </tr>
+                    
                     <tr valign="top">
                         <th scope="row"><label for="woo_social_discounts_coupon">Choose Coupon</label></th>
                         <td>

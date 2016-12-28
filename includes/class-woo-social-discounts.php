@@ -80,7 +80,7 @@ class Woo_Social_Discounts {
                 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
                
-                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_coupon' );
+                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' );
             
                 $this->loader->add_action( 'template_redirect', $plugin_public, 'process_request' );
                     
