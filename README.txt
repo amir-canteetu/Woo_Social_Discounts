@@ -35,7 +35,7 @@ home page url, which may not have sufficient information on what your store has 
 = How is the discount set? =
 
 The plugin uses Woocommerce's native coupon functionality. You have to create a woocommerce coupon in the usual way then
-apply it in this plugin's setting. 
+apply it in this plugin's setting. NB*: Ensure that the coupon's Discount Type is set to "Product Discount," or else the sharing buttons won't be displayed.  
 
 = To which social networks can products/items be shared? =
 
@@ -65,4 +65,8 @@ First release
 
 * Made social buttons narrower in css.
 
+
+= 1.0.2 =
+
+* Refactored code
 

@@ -59,6 +59,5 @@ class Woo_Social_Discounts_Admin {
 
 		return array_merge( $action_links, $links );
 	}
- 
         
 }

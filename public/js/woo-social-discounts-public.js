@@ -4,7 +4,7 @@
 
             total_counts: {
 
-                "facebook": 0, "twitter": 0, 
+                "facebook": 0, "twitter": 0 
             },
 
             setCookie: function (name, value) {
@@ -21,9 +21,9 @@
 
                 var initial_count = WSDSharing.total_counts.facebook;
 
-                jQuery.getJSON('http://graph.facebook.com/?id='+location+'&callback=?', function (data) {
+                jQuery.getJSON('https://graph.facebook.com/?id='+location+'&callback=?', function ( data ) {
 
-                    if(data.shares > initial_count){
+                    if( data.share.share_count > initial_count ){
 
                         WSDSharing.setCookie('wsd_cookie', 'true', 0);
 
@@ -42,7 +42,7 @@
 
                 var initial_count = WSDSharing.total_counts.twitter;
 
-                jQuery.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url='+location+'&callback=?', function (data) {
+                jQuery.getJSON('//cdn.api.twitter.com/1/urls/count.json?url='+location+'&callback=?', function (data) {
 
 
                     if(data.count > initial_count){
@@ -60,26 +60,15 @@
 
         };
 
-        jQuery.getJSON('http://graph.facebook.com/?id='+location+'&callback=?', function (data) {
+        jQuery.getJSON('https://graph.facebook.com/?id='+location+'&callback=?', function (data) {
 
-            if(data.shares && WSDSharing.total_counts){
+            if( data.share.share_count && WSDSharing.total_counts ){
 
-                WSDSharing.total_counts.facebook = data.shares;
+                WSDSharing.total_counts.facebook = data.share.share_count;
                 
-                console.log('These are the shares: ' + data.shares);
-
             } 
 
-        });
+        });        
 
-        jQuery.getJSON('http://cdn.api.twitter.com/1/urls/count.json?url='+location+'&callback=?', function (data) {
-
-            if(data.count && WSDSharing.total_counts){
-
-                WSDSharing.total_counts.twitter = data.count;
-
-            } 
-
-        });
 
 }); 

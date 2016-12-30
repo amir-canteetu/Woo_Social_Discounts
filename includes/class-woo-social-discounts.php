@@ -18,7 +18,7 @@ class Woo_Social_Discounts {
 
 		$this->plugin_name = 'woo-social-discounts';
                 
-		$this->version = '1.0.1';
+		$this->version = '1.0.2';
 
 		$this->load_dependencies();
                 
@@ -63,6 +63,7 @@ class Woo_Social_Discounts {
                 $this->loader->add_action( 'admin_init', $plugin_admin, 'register_settings' );
                 
                 $this->loader->add_filter( 'plugin_action_links_' . WSD_PLUGIN_BASENAME, $plugin_admin, 'plugin_settings_link' );
+               
 
 	}
 
@@ -79,8 +80,6 @@ class Woo_Social_Discounts {
                 $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
                 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-               
-                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' );
             
                 $this->loader->add_action( 'template_redirect', $plugin_public, 'process_request' );
                     
@@ -89,6 +88,14 @@ class Woo_Social_Discounts {
                 $this->loader->add_action( 'woocommerce_before_checkout_form', $plugin_public, 'apply_discount' );
                 
                 $this->loader->add_action( 'woocommerce_before_cart_table', $plugin_public, 'apply_discount' );
+                
+                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' );  
+                
+                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'wsd_share_action_javascript' );
+                    
+                $this->loader->add_action( 'wp_ajax_wsd_get_fb_shares', $plugin_public, 'wsd_get_fb_shares' );  
+                
+                $this->loader->add_action( 'wp_ajax_nopriv_wsd_get_fb_shares', $plugin_public, 'wsd_get_fb_shares' ); 
                 
 	}
 

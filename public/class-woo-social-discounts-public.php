@@ -18,7 +18,6 @@ class Woo_Social_Discounts_Public {
 
 	}
         
-        
 	/**
 	 * Check if the coupon has not expired and is valid for this product.
 	 * @return bool
@@ -48,6 +47,71 @@ class Woo_Social_Discounts_Public {
             
         }
         
+        //Not Used. See woo-social-discounts-public.js
+        public function wsd_share_action_javascript () {
+            
+            global $post;
+            
+            $ajax_url = admin_url( 'admin-ajax.php' );
+            
+            $nonce = wp_create_nonce("wsd_nonce");
+            
+        ?>
+
+            <script type="text/javascript" >
+                
+                jQuery(document).ready(function($) {
+                    
+                    var ajax_url = '<?php echo $ajax_url; ?>';
+
+                    var data = {
+                            'action': 'wsd_get_fb_shares',
+                            'post_id': '<?php echo $post->ID; ?>',
+                            'nonce': '<?php echo $nonce; ?>'
+                    };
+
+                    jQuery.post(ajax_url, data, function(response) {
+
+                        WSDSharing.total_counts.facebook = response;
+
+                    });
+
+                });
+            
+            </script> 
+            
+        <?php            
+            
+        }
+        
+        //Not Used. See woo-social-discounts-public.js
+        public function wsd_get_fb_shares ( ) {
+            
+           if ( wp_verify_nonce( $_POST['nonce'], "wsd_nonce") ) {
+
+                $post_id = $_POST['post_id'];
+
+                $cache_key = 'wsd_share' . $post_id;
+                
+                $count = get_transient( $cache_key );
+
+                $access_token = $this->settings['facebook_app_id']. '|'. $this->settings['facebook_app_secret'];
+                
+                $response = wp_remote_get( 'https://graph.facebook.com/v2.8/?id=' . urlencode( get_permalink( $post_id ) ) . '&access_token=' . $access_token );
+                        
+                $body = json_decode( $response['body'] );
+
+                $count = intval( $body->share->share_count );
+                
+                set_transient( $cache_key, $count, 60 ); 
+                
+                echo $count;
+
+                wp_die(); 
+                
+            }  
+
+        }         
         
 	/**
 	 * Enqueue frontend css file.
@@ -71,7 +135,7 @@ class Woo_Social_Discounts_Public {
             
             if( $this->is_coupon_valid() ) {
 
-		wp_enqueue_script( $this->woo_social_discounts, plugin_dir_url( __FILE__ ) . 'js/woo-social-discounts-public.min.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->woo_social_discounts, plugin_dir_url( __FILE__ ) . 'js/woo-social-discounts-public.js', array( 'jquery' ), $this->version, false );
             }
             
 	}
