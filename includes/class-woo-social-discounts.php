@@ -91,12 +91,6 @@ class Woo_Social_Discounts {
                 
                 $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' );  
                 
-                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'wsd_share_action_javascript' );
-                    
-                $this->loader->add_action( 'wp_ajax_wsd_get_fb_shares', $plugin_public, 'wsd_get_fb_shares' );  
-                
-                $this->loader->add_action( 'wp_ajax_nopriv_wsd_get_fb_shares', $plugin_public, 'wsd_get_fb_shares' ); 
-                
 	}
 
 	public function run() {

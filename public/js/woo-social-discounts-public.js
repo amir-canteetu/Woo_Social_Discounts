@@ -4,7 +4,7 @@
 
             total_counts: {
 
-                "facebook": 0, "twitter": 0 
+                "facebook": 0
             },
 
             setCookie: function (name, value) {
@@ -27,7 +27,7 @@
 
                         WSDSharing.setCookie('wsd_cookie', 'true', 0);
 
-                        jQuery('.wsd-sharing').replaceWith("<div><p>Thanks for sharing! Your discount will be applied at checkout.</p></div>");
+                        jQuery('.wsd-sharing').replaceWith('<div><p class="facebook_shared">Thanks for sharing! Your discount will be applied at checkout.</p></div>');
 
                         clearInterval(InIntervId);
 
@@ -35,28 +35,6 @@
 
                 });
             },
-
-            twitter_compare_shares: function () {
-
-                var location = window.location.href;
-
-                var initial_count = WSDSharing.total_counts.twitter;
-
-                jQuery.getJSON('//cdn.api.twitter.com/1/urls/count.json?url='+location+'&callback=?', function (data) {
-
-
-                    if(data.count > initial_count){
-
-                         WSDSharing.setCookie('wsd_cookie', 'true', 0);
-
-                        jQuery('.wsd-sharing').replaceWith("<div><p>Thanks for sharing! Your discount will be applied at checkout.</p></div>");
-
-                        clearInterval(InIntervId);
-
-                    }
-
-                });
-            }
 
         };
 
