@@ -2,7 +2,7 @@
 Contributors: amir_canteetu
 Tags: woocommerce, coupon, social coupon, discounts, social sharing
 Requires at least: 3.0.1
-Tested up to: 4.3.1
+Tested up to: 4.9.7
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J78732V5VULA6
 Stable tag: 1.0.1
 License: GPLv2 or later
@@ -12,7 +12,7 @@ Give users discounts for sharing your products on social media. Works with Wooco
 
 == Description ==
 
-Give users discounts for sharing your products on social media, specifically Facebook and Twitter.
+Give users discounts for sharing your products on social media, specifically Facebook.
 
 Admin can set discounts in the usual way by creating coupons, then using the same coupons for sharing discounts.
 
@@ -26,8 +26,8 @@ home page url, which may not have sufficient information on what your store has 
 
 1. Upload `woo-social-discounts` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Create a coupon. Go to Woocommerce->coupons
-4. Go to the plugin settings page: Woocommerce->Woo Social Discounts and set the share message, the social networks, and the coupon
+3. Create a coupon by going to Woocommerce->coupons
+4. Go to the plugin settings page: Woocommerce->Woo Social Discounts and set the share message and the coupon
  (which you created in step 4) to use. 
 
 == Frequently Asked Questions ==
@@ -35,13 +35,11 @@ home page url, which may not have sufficient information on what your store has 
 = How is the discount set? =
 
 The plugin uses Woocommerce's native coupon functionality. You have to create a woocommerce coupon in the usual way then
-apply it in this plugin's setting. NB*: Ensure that the coupon's Discount Type is set to "Product Discount," or else the sharing buttons won't be displayed.  
+apply it in this plugin's setting. 
 
 = To which social networks can products/items be shared? =
 
-Facebook and Twitter. More networks to follow soon.
-
-
+Facebook. More networks to follow.
 
 == Screenshots ==
 
@@ -65,8 +63,13 @@ First release
 
 * Made social buttons narrower in css.
 
-
 = 1.0.2 =
+
+* Refactored code
+
+= 1.1.2 =
+
+* Security enhancements
 
 * Refactored code
 

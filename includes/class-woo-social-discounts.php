@@ -69,13 +69,13 @@ class Woo_Social_Discounts {
 
 	private function define_public_hooks() {
             
-                $settings         = get_option( 'woo_social_discounts' );
+                $settings           = get_option( 'woo_social_discounts' );
                 
-                $wseo_options     = get_option( 'wpseo_social' );
+                $wseo_options       = get_option( 'wpseo_social' );
                 
-                $active_plugins   = get_option('active_plugins', array());
+                $active_plugins     = get_option('active_plugins', array());
 
-		$plugin_public = new Woo_Social_Discounts_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public      = new Woo_Social_Discounts_Public( $this->get_plugin_name(), $this->get_version() );
 
                 $this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
                 
@@ -89,7 +89,7 @@ class Woo_Social_Discounts {
                 
                 $this->loader->add_action( 'woocommerce_before_cart_table', $plugin_public, 'apply_discount' );
                 
-                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' );  
+                $this->loader->add_action( 'woocommerce_before_add_to_cart_form', $plugin_public, 'display_social_icons' ); 
                 
 	}
 

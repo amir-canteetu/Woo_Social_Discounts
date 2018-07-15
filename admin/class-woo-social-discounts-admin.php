@@ -36,13 +36,13 @@ class Woo_Social_Discounts_Admin {
         
                global $wpdb;
 
-               $post_table = $wpdb->prefix . 'posts';
+               $post_table              = $wpdb->prefix . 'posts';
 
-               $post_meta_table = $wpdb->prefix . 'postmeta';
+               $post_meta_table         = $wpdb->prefix . 'postmeta';
 
-               $coupon_objects_array = $wpdb->get_results("SELECT post_title FROM $post_table INNER JOIN $post_meta_table ON $post_table.ID = $post_meta_table.post_id WHERE $post_table.post_type = 'shop_coupon' AND $post_meta_table.meta_key =  'expiry_date' AND DATE( $post_meta_table.meta_value ) > CURRENT_DATE");
+               $coupon_objects_array    = $wpdb->get_results("SELECT post_title FROM $post_table INNER JOIN $post_meta_table ON $post_table.ID = $post_meta_table.post_id WHERE $post_table.post_type = 'shop_coupon' AND $post_meta_table.meta_key =  'expiry_date' AND DATE( $post_meta_table.meta_value ) > CURRENT_DATE");
                
-               $settings         = get_option( 'woo_social_discounts' );
+               $settings                = get_option( 'woo_social_discounts' );
                
                include_once 'partials/woo-social-discounts-admin-display.php';
 

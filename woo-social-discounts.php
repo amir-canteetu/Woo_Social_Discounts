@@ -8,7 +8,7 @@
  * Plugin Name:       Woo Social Discounts
  * Plugin URI:        https://wordpress.org/plugins/woo-social-discounts/
  * Description:       Give customers discounts for sharing your products on social media.
- * Version:           1.0.2
+ * Version:           1.1.2
  * Author:            Amir Canteetu
  * Author URI:        https://github.com/amir-canteetu
  * License:           GPL-2.0+
@@ -17,17 +17,14 @@
  * Domain Path:       /languages
  */
 
-    // If this file is called directly, abort.
-    if ( ! defined( 'WPINC' ) ) {
-            die;
-    }
-
+    defined( 'ABSPATH' ) || exit;
+ 
 
     $active_plugins         = get_option( 'active_plugins', array() );
 
     $woocommerce_installed  = in_array( 'woocommerce/woocommerce.php', $active_plugins );
 
-    if ( !$woocommerce_installed) {
+    if ( !$woocommerce_installed ) {
 
         add_action( 'admin_notices', 'wsd_admin_notice' );
 
