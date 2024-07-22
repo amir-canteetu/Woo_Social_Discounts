@@ -92,3 +92,7 @@ First release
 
 * Security fix in Admin display file.
 
+= 1.1.5 =
+
+* Escaped text & attributes in public/partials/woo-social-discounts-public-display.php
+
