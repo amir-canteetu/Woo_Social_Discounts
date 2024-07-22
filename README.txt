@@ -73,3 +73,17 @@ First release
 
 * Refactored code
 
+
+= 1.1.3 =
+
+Fixed SQL query based on incorrect attribute "expiry_date".
+
+Security fixes to Woo_Social_Discounts_Public::apply_discount
+
+Security fix in admin/partials/woo-social-discounts-admin-display.php: now using esc_html__() and esc_url()
+
+Security fix in wsd_admin_notice() in /woo-social-discounts.php: now using esc_html_e() and esc_url()
+
+Security fix in Woo_Social_Discounts_Admin::plugin_settings_link: now using wp_create_nonce()
+
+Fixed admin/partials/woo-social-discounts-admin-display.php: Checked for isset($settings['coupon_code']).

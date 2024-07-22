@@ -211,23 +211,18 @@
 
             public function apply_discount() {
 
-                $cookie_args = filter_input_array(INPUT_COOKIE);
+                $wsd_cookie = filter_input(INPUT_COOKIE, 'wsd_cookie', FILTER_SANITIZE_STRING);
 
-                if( !empty( $cookie_args["wsd_cookie"] ) ) {
-
+                if ( !empty( $wsd_cookie ) ) {
                     global $woocommerce;
-
-                    $settings           = get_option( 'woo_social_discounts' );
-                    $coupon_code        = $settings['coupon_code'];
-
-                    if ( $woocommerce->cart->has_discount( $coupon_code ) ) {
-                        return;
-                    } 
-
-                    $woocommerce->cart->add_discount( $coupon_code ); 
-
-                 }
-
+            
+                    $settings       = get_option( 'woo_social_discounts' );
+                    $coupon_code    = isset( $settings['coupon_code'] ) ? sanitize_text_field( $settings['coupon_code'] ) : '';
+            
+                    if ( $coupon_code && !$woocommerce->cart->has_discount( $coupon_code ) ) {
+                        $woocommerce->cart->add_discount( $coupon_code );
+                    }
+                }
             }
 
     }

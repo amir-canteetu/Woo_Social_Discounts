@@ -37,8 +37,14 @@
         }
 
         function wsd_admin_notice() {
-
-            echo '<div id="message" class="error"><p>Woo Social Discounts requires <a href="https://wordpress.org/plugins/woocommerce/">Woocommerce</a> to be installed; please install or upgrade your installation.</div>';
+            ?>
+                <div id="message" class="error">
+                    <p><?php esc_html_e( 'Woo Social Discounts requires ', 'woo-social-discounts' ); ?>
+                    <a href="<?php echo esc_url( 'https://wordpress.org/plugins/woocommerce/' ); ?>"><?php esc_html_e( 'Woocommerce', 'woo-social-discounts' ); ?></a>
+                    <?php esc_html_e( ' to be installed; please install or upgrade your installation.', 'woo-social-discounts' ); ?>
+                    </p>
+                </div>
+            <?php
 
         }
 
@@ -64,11 +70,11 @@
 
                 Woo_Social_Discounts_Deactivator::deactivate();
 
-        }
+        }      
 
         register_activation_hook( __FILE__, 'activate_woo_social_discounts' );
 
-        register_deactivation_hook( __FILE__, 'deactivate_woo_social_discounts' );
+        register_deactivation_hook( __FILE__, 'deactivate_woo_social_discounts' );   
         
         define_constants();
 
