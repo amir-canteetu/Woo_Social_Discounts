@@ -21,14 +21,14 @@ defined( 'ABSPATH' ) || exit;
                     <table class="form-table">
                         <tbody>
                             <tr valign="top">
-                                <th scope="row"><label for="woo_social_discounts_message">Share Message</label></th>
+                                <th scope="row"><label for="woo_social_discounts_message"><?php esc_html_e( 'Share Message', 'woo-social-discounts' ); ?></label></th>
                                 <td><input type="text" class="input-text regular-input" size="70" value="<?php echo esc_attr( $settings['message'] ); ?>" id="woo_social_discounts_message" name="woo_social_discounts[message]" /></td>
                             </tr>
                             <tr valign="top">
-                                <th scope="row"><label for="woo_social_discounts_network">Choose Social Networks</label></th>
+                                <th scope="row"><label for="woo_social_discounts_network"><?php esc_html_e( 'Choose Social Networks', 'woo-social-discounts' ); ?></label></th>
                                 <td>
                                     <p>
-                                        <input type="checkbox" name="woo_social_discounts[social_shares][facebook]" id="woo_social_discounts_fb" <?php echo isset($settings['social_shares']['facebook']) ? 'checked="checked"': ''; ?>/>Facebook&nbsp;&nbsp;&nbsp;
+                                    <input type="checkbox" name="woo_social_discounts[social_shares][facebook]" id="woo_social_discounts_fb" <?php checked( isset( $settings['social_shares']['facebook'] ) ); ?> /><?php esc_html_e( 'Facebook', 'woo-social-discounts' ); ?>
                                     </p>
                                 </td>
                             </tr>
